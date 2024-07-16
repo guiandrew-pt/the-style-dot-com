@@ -18,8 +18,11 @@
   
     .cart-items {
       height: 240px;
+      /* flex-direction: column;
+      overflow: scroll; */
+      display: flex;
       flex-direction: column;
-      overflow: hidden;
+      overflow-y: auto;
     }
   
     button {
