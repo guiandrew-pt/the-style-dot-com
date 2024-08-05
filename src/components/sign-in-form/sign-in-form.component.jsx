@@ -1,12 +1,10 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import FormInput from "../form-input/form-input.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
-import { 
-    signInWithGooglePopup,
-    signInAuthUserWithEmailAndPassword 
-} from "../../utils/firebase/firebase.utils";
+import { googleSignInStart, emailSignInStart } from "../../store/user/user.action";
 
 import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles";
 
@@ -16,51 +14,33 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+    const dispatch = useDispatch();
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        try {
-            // const response = await signInAuthUserWithEmailAndPassword(email, password);
-            //console.log(response);
-            await signInAuthUserWithEmailAndPassword(email, password);
-
-            resetFormFields();
-        } catch (error) {
-            switch(error.code) {
-                case "auth/invalid-credential":
-                    alert("Something went worng, Incorrect user or password!");
-                    break;
-                
-                case "auth/auth/wrong-password":
-                    alert("Incorrect password!");
-                    break;
-
-                default: 
-                    console.log(error);
-            }
-        }
-    };
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-
-        setFormFields({ ...formFields, [name]: value });
-    };
-
+  
     const resetFormFields = () => {
-        setFormFields(defaultFormFields);
+      setFormFields(defaultFormFields);
     };
-
+  
     const signInWithGoogle = async () => {
-        try {
-            await signInWithGooglePopup(); 
-        } catch (error) {
-            // console.log(error);
-            return;
-        }
+      dispatch(googleSignInStart());
+    };
+  
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+  
+      try {
+        dispatch(emailSignInStart(email, password));
+        resetFormFields();
+      } catch (error) {
+        console.log('user sign in failed', error);
+      }
+    };
+  
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+  
+      setFormFields({ ...formFields, [name]: value });
     };
 
     return (
