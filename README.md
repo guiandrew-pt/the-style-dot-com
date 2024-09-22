@@ -1,3 +1,74 @@
+# E-Commerce in react
+
+### Project Overvew
+
+    - We have a navigation and routing, that takes us to a different pages of categories of items, and we can add this items to the cart. From the cart, we can see them direct update. In checkout we can increace or decrease, and see the live changes in both checkout and cart pages. We can remove items. We integrate with firebase to storage and authentificate. We can sign in with Google, a sign in with mail and password, and a sign up.
+
+### Features
+
+    - React;
+    - Firebase;
+    - React-dom;
+    - React-redux;
+    - Sass;
+    - Redux-Saga;
+
+##### react-dom
+
+    - Is a specific module within the React library that handles the rendering and updating of React elements in the real DOM;
+
+##### React-redux
+
+    - It lets your React components read data from a Redux store, and dispatch actions to the store to update state;
+
+##### Sass
+
+    - Sass stands for Syntactically Awesome Stylesheet;
+    - Sass is an extension to CSS;
+    - Sass is a CSS pre-processor;
+    - Sass is completely compatible with all versions of CSS;
+    - Sass reduces repetition of CSS and therefore saves time;
+    - Sass was designed by Hampton Catlin and developed by Natalie Weizenbaum in 2006;
+    - Sass is free to download and use;
+
+##### Redux-Saga
+
+    - Is a middleware library used to allow a Redux store to interact with resources outside of itself asynchronously. This includes making HTTP requests to external services, accessing browser storage, and executing I/O operations;
+
+<p align="center">
+  <img src="./screenshots/example1.png" width="350" title="Console">
+</p>
+
+<p align="center">
+  <img src="./screenshots/example2.png" width="350" title="Console">
+</p>
+
+<p align="center">
+  <img src="./screenshots/example3.png" width="350" title="Console">
+</p>
+
+<p align="center">
+  <img src="./screenshots/example4.png" width="350" title="Console">
+</p>
+
+<p align="center">
+  <img src="./screenshots/example5.png" width="350" title="Console">
+</p>
+
+<p align="center">
+  <img src="./screenshots/example6.png" width="350" title="Console">
+</p>
+
+<p align="center">
+  <img src="./screenshots/example7.png" width="350" title="Console">
+</p>
+
+<p align="center">
+  <img src="./screenshots/example8.png" width="350" title="Console">
+</p>
+
+###
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
